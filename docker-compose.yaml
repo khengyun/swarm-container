@@ -1,0 +1,9 @@
+version: '3.8'
+
+name: python_swarm
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
