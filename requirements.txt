@@ -1,5 +1,2 @@
-numpy
-pandas
-django
-Flask
-# Add more libraries as needed
+flask
+redis

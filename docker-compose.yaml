@@ -1,17 +1,10 @@
-version: '3.8'
+version: '3'
 
-name: python_swarm
 services:
-  python:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  web:
+    image: 127.0.0.1:5000/stackdemo
+    build: .
     ports:
-      - "80:8080"
-    deploy:
-      mode: replicated
-      replicas: 2
-      placement:
-        constraints:
-          - node.role == worker
-
+      - "8000:8000"
+  redis:
+    image: redis:alpine
