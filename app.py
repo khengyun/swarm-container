@@ -1,19 +1,21 @@
 from flask import Flask, render_template
+from fastapi import FastAPI, Depends, Request, Query
+import uvicorn
+app = FastAPI()
 
-app = Flask(__name__)
 
-@app.route('/')
+@app.get('/')
 def index():
     return 'Hello, World!'
 
-@app.route('/about')
+@app.get('/about')
 def about():
     return 'This is the about page.'
 
-@app.route('/user/<username>')
+@app.get('/user/<username>')
 def user_profile(username):
     return f'Hello, {username}!'
 
 if __name__ == '__main__':
     #  localhost:5000
-    app.run(debug=True, port=8080)
+    uvicorn.run('app:app', port=8080, host='0.0.0.0')

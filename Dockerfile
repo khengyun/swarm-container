@@ -9,6 +9,6 @@ RUN export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 COPY . .
 WORKDIR /app
 
-EXPOSE 8001
+EXPOSE 8080
 
-CMD ["python3", "main.py"]
+CMD ["python3", "app.py"]
