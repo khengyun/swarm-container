@@ -10,7 +10,7 @@ services:
       - "80:8080"
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 2
       placement:
         constraints:
           - node.role == worker
